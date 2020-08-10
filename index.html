@@ -1,0 +1,90 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Josh Cimbron">
+    <title>Josh Cimbron - Interactive Designer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700;800&family=Open+Sans+Condensed:wght@300;700&family=Rubik:wght@500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="navbar">
+        <div id="nav-left">
+            <button class="nav-btn">Josh Cimbron</button>
+        </div>
+        <div id="nav-right">
+            <button class="nav-btn">About</button>
+            <button class="nav-btn">Projects</button>
+            <button class="nav-cta">Get in touch</button>
+        </div>
+    </div>
+    <div id="header">
+        <div id="headline">
+            <p>Hi, I'm Josh.</p></br>
+            <div id="interactive-container"><h1 class="top-text">Interactive Designer</h1><h1 id="bottom-text">Interactive Designer</h1><h1 id="hidden-text">Interactive Designer</h1>
+                <img id="illustration" src="images/illustration.png"></div>
+            <p id="ocean-state">from the <span id="italic">Ocean State.</span></p>
+            <p id="test"></p>
+        </div>
+    </div>
+    <div id="main-content">
+        <div class="content-container">
+            <div class="container-left">
+                <div class="case-link">
+                <h2>Hotclub</h2>
+                <p>Building a website for a scenic waterfront bar.</p>
+                </div>
+                <div class="case-link">
+                <h2>Hotclub</h2>
+                <p>Building a website for a scenic waterfront bar.</p>
+                </div>
+                <div class="case-link">
+                <h2>Hotclub</h2>
+                <p>Building a website for a scenic waterfront bar.</p>
+                </div>
+            </div>
+            <div class="container-right">
+                <img id="container1-image" src="images/hotclub.jpg">
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="contact-container">
+            <h2>Like what you see?</h2>
+            <button id="contact-btn">Let's work together</button>
+        </div>
+        <div id="social-nav">
+            <img src="images/dribbble-white.svg">
+            <img src="images/linkedin-white.svg">
+        </div>
+    </div>
+<script>
+
+document.getElementById("interactive-container").onmouseenter = function() {mouseOverHeader()};
+document.getElementById("interactive-container").onmousemove = function() {mouseImage(event)};
+document.getElementById("interactive-container").onmouseleave = function() {mouseOutHeader(event)};
+var image = document.getElementById("illustration");
+
+
+function mouseOverHeader(){
+    document.getElementById("bottom-text").style.display= "block";
+    document.getElementById("bottom-text").style.cursor= "default";
+}
+
+function mouseOutHeader(){
+    document.getElementById("bottom-text").style.display= "none";
+}
+
+function mouseImage(e){
+  console.log("Calculating coordinates");
+  var x = e.clientX;
+  var y = e.clientY;
+  image.removeAttribute("hidden");
+  image.style.left = x-500+'px'; 
+  image.style.top = y-500+'px';
+}
+    
+</script>
+</body>
+</html>
