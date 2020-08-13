@@ -1,4 +1,4 @@
-<html>
+<<html>
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Josh Cimbron">
@@ -31,21 +31,23 @@
     <div id="main-content">
         <div class="content-container">
             <div class="container-left">
-                <div class="case-link">
+                <div class="case-link" id="link1">
+                <h2>Hotclub</h2>
+                <p>Building a website for a scenic waterfront bar.</p>
+            </div>
+                <div class="case-link" id="link2">
                 <h2>Hotclub</h2>
                 <p>Building a website for a scenic waterfront bar.</p>
                 </div>
-                <div class="case-link">
-                <h2>Hotclub</h2>
-                <p>Building a website for a scenic waterfront bar.</p>
-                </div>
-                <div class="case-link">
+                <div class="case-link" id="link3">
                 <h2>Hotclub</h2>
                 <p>Building a website for a scenic waterfront bar.</p>
                 </div>
             </div>
             <div class="container-right">
+                <div class="distortion">
                 <img id="container1-image" src="images/hotclub.jpg">
+                </div>
             </div>
         </div>
     </div>
@@ -63,9 +65,10 @@
 
 document.getElementById("interactive-container").onmouseenter = function() {mouseOverHeader()};
 document.getElementById("interactive-container").onmousemove = function() {mouseImage(event)};
-document.getElementById("interactive-container").onmouseleave = function() {mouseOutHeader(event)};
+document.getElementById("interactive-container").onmouseleave = function() {mouseOutHeader()};
 var image = document.getElementById("illustration");
 
+// Hero section
 
 function mouseOverHeader(){
     document.getElementById("bottom-text").style.display= "block";
@@ -84,6 +87,53 @@ function mouseImage(e){
   image.style.left = x-500+'px'; 
   image.style.top = y-500+'px';
 }
+
+// Main content, link highlight and image transitions
+
+
+    var link1 = document.getElementById("link1");
+    var link2 = document.getElementById("link2");
+    var link3 = document.getElementById("link3");
+
+    function test1(){
+        console.log("Test1 working");
+        link1.style.opacity = "1";
+        link2.style.opacity = ".4";
+        link3.style.opacity = ".4";
+    }
+
+    function test2(){
+        console.log("Test2 working");
+        link1.style.opacity = ".4";
+        link2.style.opacity = "1";
+        link3.style.opacity = ".4";
+    }
+
+    function test3(){
+        console.log("Test3 working");
+        link1.style.opacity = ".4";
+        link2.style.opacity = ".4";
+        link3.style.opacity = "1";
+    }
+
+        function linksDefaultState(){
+        console.log("Link default state loaded");
+        link1.style.opacity = "1";
+        link2.style.opacity = ".4";
+        link3.style.opacity = ".4";
+    }
+
+    linksDefaultState();
+
+    link1.onmouseenter = function() {test1()};
+    link2.onmouseenter = function() {test2()};
+    link3.onmouseenter = function() {test3()};
+
+
+
+
+
+
     
 </script>
 </body>
