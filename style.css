@@ -14,6 +14,7 @@ body{
     position: relative;
     align-items: center;
     justify-content: center;
+    background-color: white;
     height: 80px;
     padding: 0px 40px 0px 40px;
     z-index: 2;
@@ -141,7 +142,7 @@ button{
 .container-left{
     display: flex;
     flex-direction: column;
-    width: 33.333%;
+    width: 36.333%;
     text-align: left;
     justify-content: center;
 }
@@ -151,6 +152,7 @@ button{
     font-size: 21px;
     font-weight: 600;
     text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
 #main-content p{
@@ -160,9 +162,15 @@ button{
     margin-top: 0px;
 }
 
+.case-link {
+    transition: opacity 0.3s;
+    -webkit-transition: opacity 0.3s;
+}
+
+
 
 .container-right{
-    width: 66.666%;
+    width: 63.666%;
     text-align: right;
 }
 
