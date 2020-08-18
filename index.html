@@ -1,140 +1,91 @@
-<<html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="author" content="Josh Cimbron">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Josh Cimbron - Interactive Designer</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700;800&family=Open+Sans+Condensed:wght@300;700&family=Rubik:wght@500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="navbar">
         <div id="nav-left">
-            <button class="nav-btn">Josh Cimbron</button>
+            <a href=""><button class="nav-btn">Josh Cimbron</button></a>
         </div>
         <div id="nav-right">
-            <button class="nav-btn">About</button>
-            <button class="nav-btn">Projects</button>
-            <button class="nav-cta">Get in touch</button>
+            <a href=""><button class="nav-btn">About</button></a>
+            <a href=""><button class="nav-btn">Projects</button></a>
+            <a href=""><button class="nav-cta">Get in touch</button></a>
+            <img id="hamburger" src="images/menu.svg">
         </div>
     </div>
-    <div id="header">
-        <div id="headline">
-            <p>Hi, I'm Josh.</p></br>
-            <div id="interactive-container"><h1 class="top-text">Interactive Designer</h1><h1 id="bottom-text">Interactive Designer</h1><h1 id="hidden-text">Interactive Designer</h1>
-                <img id="illustration" src="images/illustration.png"></div>
-            <p id="ocean-state">from the <span id="italic">Ocean State.</span></p>
-            <p id="test"></p>
+
+    <div id="hero-wrapper">
+    <div id="hero">
+        <div id="hero-left">
+            <img id="illustration" src="images/floating_selfie_optimized.png">
+            <img id="background-img" src="images/teal_rectangle.png">
         </div>
+        <div id="hero-right">
+            <h1>Hi, I'm Josh.</h1>
+            <p>I'm an Interactive Designer from the Ocean State.</p>
+            <a href=""><button id="about-btn">More about me</button></a>
+            </div>
     </div>
+    </div>
+
     <div id="main-content">
-        <div class="content-container">
+        <h1>Featured</h1><h1>Projects</h1>
             <div class="container-left">
                 <div class="case-link" id="link1">
-                <h2>Hotclub</h2>
-                <p>Building a website for a scenic waterfront bar.</p>
-            </div>
+                    <a href="">
+                    <img class="mobile-img" id="img1" src="images/hotclub.jpg">
+                    <div class="text-wrapper">
+                    <h2>hotclub</h2>
+                    <p>Building a website for a scenic waterfront bar.</p></a>
+                    </div>
+                </div>
                 <div class="case-link" id="link2">
-                <h2>Hotclub</h2>
-                <p>Building a website for a scenic waterfront bar.</p>
+                    <a href="">
+                    <img class="mobile-img" id="img2" src="images/hotclub.jpg">
+                    <div class="text-wrapper">
+                    <h2>mimic</h2>
+                    <p>Bringing storytelling to life with realtime voice changing.</p></a>
+                    </div>
                 </div>
                 <div class="case-link" id="link3">
-                <h2>Hotclub</h2>
-                <p>Building a website for a scenic waterfront bar.</p>
+                    <a href="">
+                    <img class="mobile-img" id="img3" src="images/hotclub.jpg">
+                    <div class="text-wrapper">
+                    <h2>project 3</h2>
+                    <p>This project is coming soon. Please check back!</p></a>
+                    </div>
                 </div>
             </div>
+
             <div class="container-right">
-                <div class="distortion">
+                <div id="parent-container">
+                <a href="">
                 <img id="container1-image" src="images/hotclub.jpg">
+                </a>
                 </div>
             </div>
-        </div>
     </div>
+    
     <div id="footer">
         <div id="contact-container">
             <h2>Like what you see?</h2>
-            <button id="contact-btn">Let's work together</button>
+            <a id="link" href=""><button id="contact-btn">Let's work together</button></a>
         </div>
         <div id="social-nav">
             <img src="images/dribbble-white.svg">
             <img src="images/linkedin-white.svg">
         </div>
     </div>
-<script>
 
-document.getElementById("interactive-container").onmouseenter = function() {mouseOverHeader()};
-document.getElementById("interactive-container").onmousemove = function() {mouseImage(event)};
-document.getElementById("interactive-container").onmouseleave = function() {mouseOutHeader()};
-var image = document.getElementById("illustration");
+    <script src="content_swap.js"></script>
 
-// Hero section
-
-function mouseOverHeader(){
-    document.getElementById("bottom-text").style.display= "block";
-    document.getElementById("bottom-text").style.cursor= "default";
-}
-
-function mouseOutHeader(){
-    document.getElementById("bottom-text").style.display= "none";
-}
-
-function mouseImage(e){
-  console.log("Calculating coordinates");
-  var x = e.clientX;
-  var y = e.clientY;
-  image.removeAttribute("hidden");
-  image.style.left = x-500+'px'; 
-  image.style.top = y-500+'px';
-}
-
-// Main content, link highlight and image transitions
-
-
-    var link1 = document.getElementById("link1");
-    var link2 = document.getElementById("link2");
-    var link3 = document.getElementById("link3");
-
-    function test1(){
-        console.log("Test1 working");
-        link1.style.opacity = "1";
-        link2.style.opacity = ".4";
-        link3.style.opacity = ".4";
-    }
-
-    function test2(){
-        console.log("Test2 working");
-        link1.style.opacity = ".4";
-        link2.style.opacity = "1";
-        link3.style.opacity = ".4";
-    }
-
-    function test3(){
-        console.log("Test3 working");
-        link1.style.opacity = ".4";
-        link2.style.opacity = ".4";
-        link3.style.opacity = "1";
-    }
-
-        function linksDefaultState(){
-        console.log("Link default state loaded");
-        link1.style.opacity = "1";
-        link2.style.opacity = ".4";
-        link3.style.opacity = ".4";
-    }
-
-    linksDefaultState();
-
-    link1.onmouseenter = function() {test1()};
-    link2.onmouseenter = function() {test2()};
-    link3.onmouseenter = function() {test3()};
-
-
-
-
-
-
-    
-</script>
 </body>
 </html>
