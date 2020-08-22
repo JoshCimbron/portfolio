@@ -1,10 +1,27 @@
-/* Desktop */
-
-body{
-    font-family: 'Titillium Web', sans-serif;
+/* Desktop styling */
+html, body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
     padding: 0px;
     margin: 0px;
     color: #45364B;
+    height: 100%;
+}
+
+.max-window{
+    max-width: 1600px;
+    height: 100%;
+}
+
+.window-wrapper{
+    width: 100%;
+}
+
+h1 {
+    font-family: 'Raleway', sans-serif;
 }
 
 a {
@@ -26,12 +43,12 @@ a:visited {
   }
 
 button{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
     cursor: pointer;
 }
 
 #navbar button{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-size: 16px;
 }
 
@@ -43,7 +60,6 @@ button{
     background-color: white;
     height: 80px;
     padding: 0px 40px 0px 40px;
-    z-index: 2;
 }
 
 #nav-left{
@@ -64,7 +80,6 @@ button{
 .nav-cta{
     background-color: #ABFFFC;
     border-radius: 4px;
-    font-weight: 600;
     padding: 10px 20px 10px 20px;
 }
 
@@ -72,8 +87,8 @@ button{
     background-color: #73DCD8;
 }
 
-#hamburger{
-    display:none;
+#mobile-nav{
+    display: none;
 }
 
 #hero{
@@ -89,35 +104,30 @@ button{
     display: flex;
     width: 50%;
     justify-content: center;
+    align-items: center;
+
 }
 
 #illustration{
-    width: 60%;
+    width: 85%;
     height: auto;
-    z-index: 2;
-}
-
-#background-img{
-    position: absolute;
-    width: 40%;
-    height: auto;
-    top:50%;
-    left:10%;
-    transform:translate(-10%, -50%);
-    z-index: 1;
 }
 
 #hero-right{
     display: flex;
+    box-sizing: border-box;
     flex-direction: column;
+    padding-left: 40px;
     width: 50%;
 }
 
 
 #hero p{
+    font-family: 'Raleway', sans-serif;
     font-size: 37px;
-    font-weight: 300;
-    margin-bottom: 30px;
+    font-weight: 600;
+    width: 500px;
+    margin-bottom: 50px;
     margin-top: 0px;
 }
   
@@ -127,11 +137,10 @@ button{
   }
 
 #hero h1{
-    font-family: 'Titillium Web', sans-serif;
     font-size: 67;
-    font-weight: 700;
+    font-weight: 300;
     margin-top: 0px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
 }
 
 #about-btn{
@@ -159,18 +168,23 @@ button{
 #main-content{
     display: flex;
     position: relative;
-    z-index: 2;
     padding: 80px 60px 80px 60px;
     background-color: white;
 }
 
-#main-content h1{
+
+.title{
+    display: flex;
     display: none;
+    width: 100%;
+    padding: 0px 60px 0px 60px;
+    justify-content: center;
+    align-items: center; 
 }
 
-#main-content br{
-    margin-bottom: 0px;
-    padding: 0;
+.title h1{
+    font-size: 37px;
+    font-weight: 300;
 }
 
 
@@ -188,17 +202,17 @@ button{
 
 #main-content h2{
     font-family: 'Open Sans', sans-serif;
-    font-variant: small-caps;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 5px;
+    font-weight: 400;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
     
 }
 
 #main-content p{
     font-size: 28px;
-    font-weight: 700;
-    width: 370px;
+    font-weight: 600;
+    width: 400px;
     margin-top: 0px;
 }
 
@@ -242,18 +256,18 @@ button{
     justify-content: center;
     align-items: center;
     height: 500px;
-    /* background-color: #F7FF58; */
-    background-image: linear-gradient(to left, rgba(234,242,72,.6), rgba(234,242,72,1)); 
+    background-color: #92FFFC;
 }
 
 #contact-container h2{
-    font-size: 50px;
+    font-size: 67px;
+    font-family: 'Raleway', sans-serif;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 
 #contact-btn{
-    font-size: 18px;
+    font-size: 21px;
     font-weight: 400;
     border: 1px solid #45364B;
     padding: 15px 30px 15px 30px;
@@ -280,7 +294,7 @@ button{
 }
 
 #footer{
-    width: 100vw;
+    width: 100%;
     height: 580px;
 }
 
@@ -297,17 +311,12 @@ button{
         display: inline;
     }
 
-    #navbar button{
-        display: none;
-    }
-
     #navbar{
         box-sizing: border-box;
         height: 60px;
         width: 100%;
         background-color: #92FFFC;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 10px;
     }
 
     #nav-left{
@@ -318,18 +327,58 @@ button{
     #nav-right{
         width: 50%;
     }
-    
-    #hamburger{
+
+    /* Overlay hamburger menu */
+
+    #mobile-nav{
         display: block;
-        height: 44px;
-        width: 44px;
-        float: right;
+        z-index: 1;
     }
+
+    #hamburger-container{
+        z-index: 100;
+        position: relative;
+    }
+
+    .overlay {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        background-color: white;
+        background-color: white;
+        overflow-x: hidden;
+        transition: 0.5s;
+      }
+      
+      .overlay-content {
+        position: relative;
+        text-align: center;
+        font-weight: 600;
+        top: 25%;
+        width: 100%;
+        margin-top: 30px;
+      }
+      
+      .overlay a {
+        padding: 8px 8px 16px 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: #45364B;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      .overlay a:hover, .overlay a:focus {
+        color: #f1f1f1;
+      }
+
 
     #hero-wrapper{
         display: flex;
-        background-color: red;
-        height: 750px;
+        height: 700px;
         flex-direction: column;
         margin: 0;
         padding: 0;
@@ -349,12 +398,14 @@ button{
 
     #hero p{
         font-size: 28px;
+        font-weight: 600;
+        width: 100%;
     }
+
 
     #hero-left{
         height: 350px;
         width: 100%;
-        z-index: 10;
     }
 
     #hero-right{
@@ -362,10 +413,9 @@ button{
         box-sizing: border-box;
         justify-content: center;
         background-color: transparent;
-        height: 400px;
+        height: 300px;
         width: 100%;
         padding: 0px 40px;
-        z-index: 100;
     }
 
     #about-btn{
@@ -386,6 +436,25 @@ button{
         transform: scaleX(-1);
         align-self: center;
     }
+
+    .title{
+        display: flex;
+        width: 100%;
+        padding: 0px;
+        margin: 120px auto;
+        justify-content: center;
+        align-items: center; 
+        text-align: center;
+    }
+    
+    .title h1{
+        font-size: 37px;
+        font-weight: 300;
+    }
+
+    .title span{
+        display: block;
+    }
     
     #main-content{
         display: flex;
@@ -396,23 +465,44 @@ button{
         font-size: 21px;
         margin: 0px auto;
         background-color: white;
-        padding: 0px 0px 60px 0px;
-        margin-bottom: 80px;
+        padding: 0px 0px 40px 0px;
     }
 
     .mobile-img{
         display: block;
         height: auto;
         width: 100%;
-        border-radius: 34px;
-        margin: 60px auto 20px auto;
+        border-radius: 40px;
     }
 
     #main-content h1{
         display: block;
+        font-size: 37px;
+        font-weight: 300;
         margin-top: 120px;
-        margin-bottom: 60px;
+        margin-bottom: 120px;
+
     }
+
+    #main-content h2{
+        font-size: 18px;
+        font-weight: 700;
+        margin-bottom: 5px; 
+    }
+
+    #main-content p{
+        font-size: 21px;
+        font-weight: 400;
+        width: 400px;
+        margin-top: 0px;
+    }
+
+    .text-wrap{
+        margin-top: 40px;
+        margin-bottom: 80px;
+        padding: 0px 40px;
+    }
+
 
     #main-content h1:nth-child(1){
         margin-bottom: -5;
@@ -421,33 +511,11 @@ button{
     #main-content h1:nth-child(2){
         margin-top: -5;
     }
-
-    #main-content h2{
-        font-size: 21px;
-        margin-bottom: 5px; 
-        font-variant: normal;
-        text-transform: capitalize;
-    }
     
-    #main-content p{
-        font-size: 21px;
-        font-weight: 400;
-    }
 
     .container-left{
         width: 100%;
-        margin: 0px auto -60px 0px;
         background-color: white;
-    }
-
-    .text-wrapper{
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-
-    .case-link {
-    transition: opacity 0.3s;
-    -webkit-transition: opacity 0.3s;
     }
 
     .container-right{
@@ -464,7 +532,7 @@ button{
     }
     
     #contact-container h2{
-        font-size: 28px;
+        font-size: 50px;
     }
     
 
