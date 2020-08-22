@@ -4,29 +4,43 @@
     <meta name="author" content="Josh Cimbron">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Josh Cimbron - Interactive Designer</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="hamburgers.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="max-window">
+        <div class="window-wrapper">
+
     <div id="navbar">
         <div id="nav-left">
-            <a href=""><button class="nav-btn">Josh Cimbron</button></a>
         </div>
-        <div id="nav-right">
-            <a href=""><button class="nav-btn">About</button></a>
-            <a href=""><button class="nav-btn">Projects</button></a>
-            <a href=""><button class="nav-cta">Get in touch</button></a>
-            <img id="hamburger" src="images/menu.svg">
+            <div id="nav-right">  
+                <div id="hamburger-container">
+                <button class="hamburger hamburger--elastic js-hamburger" type="button">
+                    <span class="hamburger-box">
+                      <span class="hamburger-inner"></span>
+                    </span>
+                  </button>
+                </div>
+
+                <div id="mobile-nav" class="overlay">
+                    <div class="overlay-content">
+                        <a href="#">About</a>
+                        <a href="#">Projects</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
         </div>
     </div>
 
     <div id="hero-wrapper">
     <div id="hero">
         <div id="hero-left">
-            <img id="illustration" src="images/floating_selfie_optimized.png">
-            <img id="background-img" src="images/teal_rectangle.png">
+            <img id="illustration" src="images/floating_selfie.png">
         </div>
         <div id="hero-right">
             <h1>Hi, I'm Josh.</h1>
@@ -36,34 +50,35 @@
     </div>
     </div>
 
+    <div class="title">
+        <h1>Featured <span>Projects</span></h1>
+    </div>
     <div id="main-content">
-        <h1>Featured</h1><h1>Projects</h1>
             <div class="container-left">
                 <div class="case-link" id="link1">
                     <a href="">
                     <img class="mobile-img" id="img1" src="images/hotclub.jpg">
-                    <div class="text-wrapper">
+                    <div class="text-wrap">
                     <h2>hotclub</h2>
-                    <p>Building a website for a scenic waterfront bar.</p></a>
-                    </div>
-                </div>
+                    <p>Building a website for a scenic waterfront bar.</p>
+                    </div></a></div>
+
                 <div class="case-link" id="link2">
                     <a href="">
                     <img class="mobile-img" id="img2" src="images/hotclub.jpg">
-                    <div class="text-wrapper">
+                    <div class="text-wrap">
                     <h2>mimic</h2>
-                    <p>Bringing storytelling to life with realtime voice changing.</p></a>
-                    </div>
-                </div>
+                    <p>Bringing storytelling to life with realtime voice changing.</p>
+                    </div></a></div>
+
                 <div class="case-link" id="link3">
                     <a href="">
                     <img class="mobile-img" id="img3" src="images/hotclub.jpg">
-                    <div class="text-wrapper">
+                    <div class="text-wrap">
                     <h2>project 3</h2>
-                    <p>This project is coming soon. Please check back!</p></a>
-                    </div>
+                    <p>This project is coming soon. Please check back!</p>
+                    </div></a></div>
                 </div>
-            </div>
 
             <div class="container-right">
                 <div id="parent-container">
@@ -76,16 +91,18 @@
     
     <div id="footer">
         <div id="contact-container">
-            <h2>Like what you see?</h2>
-            <a id="link" href=""><button id="contact-btn">Let's work together</button></a>
+            <h2>Say Hello.</h2>
+            <a id="link" href=""><button id="contact-btn">Send me a message</button></a>
         </div>
         <div id="social-nav">
             <img src="images/dribbble-white.svg">
             <img src="images/linkedin-white.svg">
         </div>
     </div>
-
-    <script src="content_swap.js"></script>
+</div>
+</div>
+    <script src="index.js"></script>
+    <script src="hamburgers.js" async></script>
 
 </body>
 </html>
