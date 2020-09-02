@@ -39,7 +39,7 @@ var link = document.getElementById("link");
         link1.style.opacity = "1";
         link2.style.opacity = ".4";
         link3.style.opacity = ".4";
-        image.src="images/hotclub.jpg";
+        image.src="images/macbook_hotclub_crop.jpg";
         link.href="";
     }
 
@@ -48,7 +48,7 @@ var link = document.getElementById("link");
         link1.style.opacity = ".4";
         link2.style.opacity = "1";
         link3.style.opacity = ".4";
-        image.src="images/test_image.png";
+        image.src="images/macbook_hotclub_crop.jpg";
     }
 
     function test3(){
@@ -99,4 +99,3 @@ var link = document.getElementById("link");
     link1.onmouseenter = function() {test1()};
     link2.onmouseenter = function() {test2()};
     link3.onmouseenter = function() {test3()};  
-   
