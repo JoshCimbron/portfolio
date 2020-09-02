@@ -1,23 +1,13 @@
 /* Desktop styling */
 html, body{
-    display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Open Sans', sans-serif;
+    font-size: 62.5%;
     font-weight: 400;
     padding: 0px;
     margin: 0px;
-    color: #45364B;
-    height: 100%;
-}
-
-.max-window{
-    max-width: 1600px;
-    height: 100%;
-}
-
-.window-wrapper{
-    width: 100%;
+    color: #35334D;
 }
 
 h1 {
@@ -42,10 +32,35 @@ a:visited {
     color: #45364B;
   }
 
-button{
+.primary-buttons{
     font-family: 'Rubik', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #35334D;
+    background-color: white;
+    padding: 15px 30px 15px 30px;
+    border-radius: 4px;
+    margin: 0px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
     cursor: pointer;
+    outline: none;
+    cursor: pointer;
+    border: none;
 }
+
+
+.primary-buttons:hover{
+    background-color: #9F52C3;
+    box-shadow: 0px 15px 20px rgba(177, 46, 229, 0.4);
+    color: #fff;
+    transform: translateY(-7px);  
+}
+
+#header{
+    background: linear-gradient(to top, #92FFFC 0%, rgba(146, 255, 252, 0.6) 22.92%, rgba(146, 255, 252, 0) 100%);
+}
+
 
 #navbar button{
     font-family: 'Rubik', sans-serif;
@@ -57,13 +72,35 @@ button{
     position: relative;
     align-items: center;
     justify-content: center;
-    background-color: white;
     height: 80px;
     padding: 0px 40px 0px 40px;
 }
 
 #nav-left{
     width: 30%;
+    margin-left: 30px;
+    background-color: transparent;
+    z-index: 100;
+}
+
+#box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    font-family: "rubik", "sans-serif";
+    font-size: 37px;
+    font-weight: 500;
+    color: #2D2327;
+    background: linear-gradient(to top, #92FFFC 50%, white 0%); 
+    border: 2px solid #2D2327;
+    border-radius: 4px;
+}
+
+#logo {
+    width: 60px;
+    height: auto;
 }
 
 #nav-right{
@@ -71,23 +108,23 @@ button{
     text-align: right;
 }
 
-button{
-    border: none;
-    background-color: transparent;
-    margin: 0px 15px 0px 15px;
+#desktop-nav{
+display: flex;
+float: right;
 }
 
-.nav-cta{
-    background-color: #ABFFFC;
-    border-radius: 4px;
-    padding: 10px 20px 10px 20px;
-}
-
-.nav-cta:hover {
-    background-color: #73DCD8;
+#desktop-nav li{
+    display: inline;
+    margin: 30px;
+    font-family: "rubik", "sans-serif";
+    font-size: 21px;
 }
 
 #mobile-nav{
+    display: none;
+}
+
+#hamburger-container{
     display: none;
 }
 
@@ -95,8 +132,8 @@ button{
     display: flex;
     position: relative;
     height: 90vh;
-    background-color: white;
     align-items: center;
+    background-color: transparent;
     padding: 0px 60px 0px 60px;
 }
 
@@ -109,12 +146,13 @@ button{
 }
 
 #illustration{
-    width: 85%;
+    width: 80%;
     height: auto;
 }
 
 #hero-right{
     display: flex;
+    align-items: center;
     box-sizing: border-box;
     flex-direction: column;
     padding-left: 40px;
@@ -138,23 +176,11 @@ button{
 
 #hero h1{
     font-size: 67;
-    font-weight: 300;
+    font-weight: 700;
     margin-top: 0px;
     margin-bottom: 20px;
 }
 
-#about-btn{
-    font-size: 18px;
-    background-color: #45364B;
-    color: white;
-    padding: 15px 30px 15px 30px;
-    border-radius: 4px;
-    margin: 0px;
-}
-
-#about-btn:hover{
-    background-color: #62466B;
-}
 
 #headline span{
     font-style: italic;
@@ -168,23 +194,22 @@ button{
 #main-content{
     display: flex;
     position: relative;
-    padding: 80px 60px 80px 60px;
     background-color: white;
+    padding: 80px 60px 80px 60px;
 }
 
 
 .title{
     display: flex;
-    display: none;
     width: 100%;
-    padding: 0px 60px 0px 60px;
+    margin-top: 60px;
     justify-content: center;
     align-items: center; 
 }
 
-.title h1{
-    font-size: 37px;
-    font-weight: 300;
+.title h2{
+    font-size: 50px;
+    font-weight: 700;
 }
 
 
@@ -200,12 +225,12 @@ button{
     align-items: center;
 }
 
-#main-content h2{
+#main-content h3{
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
+    font-weight: 700;
+    font-size: 21px;
     text-transform: uppercase;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     
 }
 
@@ -230,15 +255,14 @@ button{
 
 /* container for image */
 #parent-container{
-    width: 545.6px;
-    height: 470px;
+    width: 80%;
     overflow: hidden; 
     border-radius: 12px;
 }
 
 #container1-image{
     width: 100%;
-    height: 100%;
+    height: auto;
     background-position: center;
     background-size: cover;
     transition: all .2s;
@@ -269,13 +293,13 @@ button{
 #contact-btn{
     font-size: 21px;
     font-weight: 400;
-    border: 1px solid #45364B;
+    border: 1px solid #35334D;
     padding: 15px 30px 15px 30px;
     border-radius: 4px;
 }
 
 #contact-btn:hover{
-    background-color: #45364B;
+    background-color: #35334D;
     color: white;
 }
 
@@ -284,7 +308,7 @@ button{
     justify-content: center;
     align-items: center;
     height: 80px;
-    background-color: #45364B;
+    background-color: #35334D;
 }
 
 #social-nav img{
@@ -315,13 +339,27 @@ button{
         box-sizing: border-box;
         height: 60px;
         width: 100%;
-        background-color: #92FFFC;
         padding: 10px;
     }
 
+    #logo {
+        width: 44px;
+        height: auto;
+        padding: 0px 15px;
+    }
+
     #nav-left{
+        display: flex;
+        align-items: center;
         width: 50%;
         height: 60px;
+        margin: 0px;
+    }
+
+    #box{
+        height: 40px;
+        width: 40px;
+        font-size: 28px;
     }
 
     #nav-right{
@@ -330,12 +368,17 @@ button{
 
     /* Overlay hamburger menu */
 
+    #desktop-nav{
+        display: none;
+    }
+
     #mobile-nav{
         display: block;
         z-index: 1;
     }
 
     #hamburger-container{
+        display: block;
         z-index: 100;
         position: relative;
     }
@@ -389,7 +432,6 @@ button{
         height: 100%;
         flex-direction: column-reverse;
         padding: 0px 0px 0px 0px;
-        background-color: #92FFFC;
     }
 
     #hero h1{
@@ -418,7 +460,8 @@ button{
         padding: 0px 40px;
     }
 
-    #about-btn{
+    #hero .primary-buttons{
+        margin-top: 30px;
         font-size: 16px;
         padding: 12.5px 25px 12.5px 25px;
     }
@@ -447,9 +490,9 @@ button{
         text-align: center;
     }
     
-    .title h1{
+    .title h2{
         font-size: 37px;
-        font-weight: 300;
+        font-weight: 700;
     }
 
     .title span{
@@ -492,7 +535,7 @@ button{
 
     #main-content p{
         font-size: 21px;
-        font-weight: 400;
+        font-weight: 500;
         width: 400px;
         margin-top: 0px;
     }
